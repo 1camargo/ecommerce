@@ -83,7 +83,7 @@ public class Menu {
 			System.out.println("\n\nPressione Enter para continuar...");
 			System.in.read();
 		} catch (IOException e) {
-			System.out.println("Você pressionou uma tecla diferente de Enter!");
+			System.out.println("Você pressionou uma tecla diferente de Enter.");
 		}
 	}
 
