@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import ecommerce.model.ProdutoRoupas;
+
 
 public class Menu {
 
@@ -12,6 +14,10 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
+		
+		ProdutoRoupas r1 = new ProdutoRoupas("Camiseta", "Roupa", "Nike", "Unissex", "Larnaja", "StreetWear", "Skate", "GG");
+		
+		r1.visualizar();
 
 		while (true) {
 
