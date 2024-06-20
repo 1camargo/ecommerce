@@ -4,26 +4,25 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import ecommerce.model.ProdutoRoupas;
+import ecommerce.controller.ProdutoController;
+import ecommerce.model.*;
 
 public class Menu {
 
 	public static void main(String[] args) {
 
+		ProdutoController produtos = new ProdutoController();
+
 		Scanner leia = new Scanner(System.in);
 
-		int opcao;
-
-		ProdutoRoupas r1 = new ProdutoRoupas("Camiseta", "Roupa", 0101, "Nike", "Unissex", "Larnaja", "StreetWear",
-				"Skate", "GG");
-
-		r1.visualizar();
+		int opcao, codigo;
+		String nomeProduto, tipoProduto, marca, genero, cor, estilo, estampa, tamanho;
 
 		while (true) {
 
 			System.out.println("\n*******************************************************");
 			System.out.println("*                                                     *");
-			System.out.println("*                  ECOMMERCE FUTURO                   *");
+			System.out.println("*                  E-COMMERCE FUTURO                  *");
 			System.out.println("*                                                     *");
 			System.out.println("*******************************************************");
 			System.out.println("*                                                     *");
@@ -46,7 +45,7 @@ public class Menu {
 			}
 
 			if (opcao == 0) {
-				System.out.println("\n\nEcommerce Futuro - Agradece a prefêrencia, volte sempre!");
+				System.out.println("\n\nE-commerce Futuro - Agradecemos a prefêrencia, volte sempre!");
 				sobre();
 				leia.close();
 				System.exit(0);
@@ -54,23 +53,98 @@ public class Menu {
 
 			switch (opcao) {
 			case 1:
-				System.out.println("Cadastrar Produto\n\n");
+				System.out.println("\nCadastrar Produto\n\n");
 
+				System.out.println("Digite o nome do Produto: ");
+				leia.skip("\\R?");
+				nomeProduto = leia.nextLine();
+
+				System.out.println("\nDigite o tipo do Produto: ");
+				tipoProduto = leia.nextLine();
+
+				System.out.println("\nDigite a marca: ");
+				marca = leia.nextLine();
+
+				System.out.println("\nDigite o gênero: ");
+				genero = leia.nextLine();
+
+				System.out.println("\nDigite o estilo: ");
+				estilo = leia.nextLine();
+
+				System.out.println("\nDigite a cor: ");
+				cor = leia.nextLine();
+
+				System.out.println("\nDigite a estampa: ");
+				estampa = leia.nextLine();
+
+				System.out.println("\nDigite o tamanho: ");
+				tamanho = leia.nextLine();
+
+				produtos.cadastrar(new ProdutoRoupas(nomeProduto, tipoProduto, produtos.gerarCodigo(), marca, genero,
+						estilo, cor, estampa, tamanho));
+
+				keyPress();
 				break;
 
 			case 2:
-				System.out.println("Listar todos os Produtos\n\n");
+				System.out.println("\nListar todos os Produtos\n\n");
+				produtos.listarTodos();
 
+				keyPress();
 				break;
 
 			case 3:
-				System.out.println("Atualizar os Produtos\n\n");
+				System.out.println("\nAtualizar os Produtos\n\n");
 
+				System.out.println("Digite o código do Produto: ");
+				codigo = leia.nextInt();
+
+				var buscaProduto = produtos.buscarNaCollection(codigo);
+
+				if (buscaProduto != null) {
+					System.out.println("\nDigite o nome do Produto: ");
+					leia.skip("\\R?");
+					nomeProduto = leia.nextLine();
+
+					System.out.println("\nDigite o tipo do Produto: ");
+					tipoProduto = leia.nextLine();
+
+					System.out.println("\nDigite a marca: ");
+					marca = leia.nextLine();
+
+					System.out.println("\nDigite o gênero: ");
+					genero = leia.nextLine();
+
+					System.out.println("\nDigite o estilo: ");
+					estilo = leia.nextLine();
+
+					System.out.println("\nDigite a cor: ");
+					cor = leia.nextLine();
+
+					System.out.println("\nDigite a estampa: ");
+					estampa = leia.nextLine();
+
+					System.out.println("\nDigite o tamanho: ");
+					tamanho = leia.nextLine();
+
+					produtos.atualizar(new ProdutoRoupas(nomeProduto, tipoProduto, codigo, marca, genero, estilo, cor,
+							estampa, tamanho));
+				} else {
+					System.out.println("\nO Produto não foi localizado!");
+				}
+
+				keyPress();
 				break;
 
 			case 4:
-				System.out.println("Deletar um Produto\n\n");
+				System.out.println("\nDeletar um Produto\n\n");
 
+				System.out.println("Digite o código do Produto: ");
+				codigo = leia.nextInt();
+
+				produtos.deletar(codigo);
+
+				keyPress();
 				break;
 
 			default:

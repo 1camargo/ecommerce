@@ -1,39 +1,32 @@
 package ecommerce.model;
 
 public abstract class Produto {
-	
+
 	private String nomeProduto;
 	private String tipoProduto;
 	private int codigoProduto;
-	
+
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+
 	public Produto(String nomeProduto, String tipoProduto, int codigoProduto) {
 		this.nomeProduto = nomeProduto;
 		this.tipoProduto = tipoProduto;
 		this.codigoProduto = codigoProduto;
 	}
 
-	public String getNomeProduto() {
-		return nomeProduto;
-	}
-
-
-
 	public void setNomeProduto(String nomeProduto) {
 		this.nomeProduto = nomeProduto;
 	}
-
-
 
 	public String getTipoProduto() {
 		return tipoProduto;
 	}
 
-
-
 	public void setTipoProduto(String tipoProduto) {
 		this.tipoProduto = tipoProduto;
 	}
-
 
 	public int getCodigoProduto() {
 		return codigoProduto;

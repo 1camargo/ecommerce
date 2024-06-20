@@ -8,12 +8,12 @@ import ecommerce.repository.ProdutoRepository;
 public class ProdutoController implements ProdutoRepository {
 
 	private ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
-	int numero = 0;
+	int codigo = 0;
 
 	@Override
 	public void cadastrar(Produto produto) {
 		listaProdutos.add(produto);
-		System.out.println("\nO Produto: " + produto.getNomeProduto() + " Código: " + produto.getCodigoProduto() + " cadastrado com sucesso!");
+		System.out.println("\nO Produto: " + produto.getNomeProduto() + " com o Código: " + produto.getCodigoProduto() + " cadastrado com sucesso!");
 	}
 
 	@Override
@@ -26,7 +26,13 @@ public class ProdutoController implements ProdutoRepository {
 	
 	@Override
 	public void atualizar(Produto produto) {
-		// TODO Auto-generated method stub
+		var buscaProduto = buscarNaCollection(produto.getCodigoProduto());
+		
+		if (buscaProduto != null) {
+			listaProdutos.set(listaProdutos.indexOf(buscaProduto), produto);
+			System.out.println("\nO Produto código: " + produto.getCodigoProduto() + " foi alterado com sucesso!");
+		} else
+			System.out.println("\nO Produto código: " + produto.getCodigoProduto() + " não foi localizado!");
 
 	}
 	
@@ -42,8 +48,8 @@ public class ProdutoController implements ProdutoRepository {
 
 	}
 	
-	public int gerarNumero() {
-		return ++numero;
+	public int gerarCodigo() {
+		return ++codigo;
 
 	}
 	
