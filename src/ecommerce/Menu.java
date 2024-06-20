@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 import ecommerce.model.ProdutoRoupas;
 
-
 public class Menu {
 
 	public static void main(String[] args) {
@@ -14,9 +13,10 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
-		
-		ProdutoRoupas r1 = new ProdutoRoupas("Camiseta", "Roupa", "Nike", "Unissex", "Larnaja", "StreetWear", "Skate", "GG");
-		
+
+		ProdutoRoupas r1 = new ProdutoRoupas("Camiseta", "Roupa", 0101, "Nike", "Unissex", "Larnaja", "StreetWear",
+				"Skate", "GG");
+
 		r1.visualizar();
 
 		while (true) {

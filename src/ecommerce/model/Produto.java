@@ -4,10 +4,12 @@ public abstract class Produto {
 	
 	private String nomeProduto;
 	private String tipoProduto;
+	private int codigoProduto;
 	
-	public Produto(String nomeProduto, String tipoProduto) {
+	public Produto(String nomeProduto, String tipoProduto, int codigoProduto) {
 		this.nomeProduto = nomeProduto;
 		this.tipoProduto = tipoProduto;
+		this.codigoProduto = codigoProduto;
 	}
 
 	public String getNomeProduto() {
@@ -33,6 +35,13 @@ public abstract class Produto {
 	}
 
 
+	public int getCodigoProduto() {
+		return codigoProduto;
+	}
+
+	public void setCodigoProduto(int codigoProduto) {
+		this.codigoProduto = codigoProduto;
+	}
 
 	public void visualizar() {
 		System.out.println("\n\n***********************************************************");
@@ -40,6 +49,7 @@ public abstract class Produto {
 		System.out.println("***********************************************************");
 		System.out.println("\nNome do Produto: " + this.nomeProduto);
 		System.out.println("Tipo do Produto: " + this.tipoProduto);
+		System.out.println("Código do Produto: " + this.codigoProduto);
 
 	}
 

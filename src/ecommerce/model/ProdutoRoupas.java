@@ -9,9 +9,9 @@ public class ProdutoRoupas extends Produto {
 	private String estampa;
 	private String tamanho;
 
-	public ProdutoRoupas(String nomeProduto, String tipoProduto, String marca, String genero, String cor, String estilo,
+	public ProdutoRoupas(String nomeProduto, String tipoProduto, int codigoProduto, String marca, String genero, String cor, String estilo,
 			String estampa, String tamanho) {
-		super(nomeProduto, tipoProduto);
+		super(nomeProduto, tipoProduto, codigoProduto);
 		this.marca = marca;
 		this.genero = genero;
 		this.cor = cor;
