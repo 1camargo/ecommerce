@@ -11,9 +11,7 @@ public class Menu {
 
 		Scanner leia = new Scanner(System.in);
 
-		int opcao, numeroPeca, tipoPeca;
-		String nome, marca, tamanho;
-		float valorPeca;
+		int opcao;
 
 		while (true) {
 
