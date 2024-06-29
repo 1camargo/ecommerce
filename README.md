@@ -8,7 +8,7 @@
 
 <h1 align="center">
 	<img src="https://i.imgur.com/woFbCJA.png"  alt="Logo"  width=""><br><br>
-    Projeto E-commerce do Futuro
+    Projeto E-commerce do Futuro.
 </h1>
 
 <div>
