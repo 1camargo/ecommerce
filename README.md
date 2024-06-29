@@ -39,7 +39,7 @@
     </a>
     -->
     <a href="#">
-		<img  src="https://img.shields.io/static/v1?label=Language&message=Java&color=red&style=for-the-badge&logo=Java](https://img.shields.io/static/v1?label=Linguagem&message=Java&color=red&style=for-the-badge&logo=openjdk" alt="Language: Java">
+		<img  src="https://img.shields.io/static/v1?label=Linguagem&message=Java&color=red&style=for-the-badge&logo=openjdk" alt="Language: Java">
 	</a>
     <!--
 	<a href="#">
